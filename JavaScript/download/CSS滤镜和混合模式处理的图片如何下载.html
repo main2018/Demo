@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .clarendon-filter {
+        /* filter: contrast(1.2) saturate(1.35); */
+        filter: blur(5px);
+        display: inline-block;
+        position: relative;
+      }
+      .clarendon-filter::before {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        background: rgba(127, 187, 227, 0.2);
+        mix-blend-mode: overlay;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="input" class="clarendon-filter">
+      <img src="http://img.tukeshare.com/1555493554703" width="256" height="192" />
+    </div>
+    <h4>后台存储的处理后的图像（右键另存是合成图）</h4>
+    <p><img id="output" width="256" height="192" /></p>
+
+    <button onclick="download('test.png')">下载</button>
+  </body>
+</html>
+<script>
+  // 输入
+  var eleInput = document.getElementById("input");
+  // 输出
+  var eleOutput = document.getElementById("output");
+  /**
+   * CSS渲染的图像效果转换成纯图像
+   * @param  {[type]} dom [description]
+   * @return {[type]}     返回的是图像的base64信息
+   */
+  var cssRenderImage2PureImage = function(dom, callback) {
+    if (!dom) {
+      return this;
+    }
+    // 尺寸
+    var width = dom.offsetWidth;
+    var height = dom.offsetHeight;
+
+    // 复制DOM节点
+    var cloneDom = dom.cloneNode(true);
+    cloneDom.setAttribute("xmlns", "http://www.w3.org/1999/xhtml");
+
+    // 图像元素处理
+    var eleImg = cloneDom.querySelector("img");
+    // 图像变成base64
+    var tempImg = new Image();
+    tempImg.setAttribute("crossOrigin",'Anonymous')
+    tempImg.onload = function() {
+      var canvas = document.createElement("canvas");
+      canvas.width = width;
+      canvas.height = height;
+      // 上下文
+      var context = canvas.getContext("2d");
+      // 绘制在画布上
+      context.drawImage(tempImg, 0, 0, width, height);
+
+      // 图像转换
+      eleImg.src = canvas.toDataURL();
+
+      // 进一步转换
+      var svgImg = new Image();
+      svgImg.onload = function() {
+        // canvas绘制合成图
+        context.clearRect(0, 0, width, height);
+        context.drawImage(svgImg, 0, 0, width, height);
+        // 使用jpeg格式
+        callback && callback(canvas.toDataURL("image/jpeg"));
+      };
+      svgImg.src =
+        'data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="' +
+        width +
+        '" height="' +
+        height +
+        '"><foreignObject x="0" y="0" width="100%" height="100%">' +
+        new XMLSerializer()
+          .serializeToString(cloneDom)
+          .replace(/#/g, "%23")
+          .replace(/\n/g, "%0A") +
+        document.querySelector("style").outerHTML +
+        "</foreignObject></svg>";
+    };
+    tempImg.src = eleImg.src;
+  };
+
+  // 执行
+  var link = ''
+  cssRenderImage2PureImage(eleInput, function(url) {
+    eleOutput.src = url;
+    link = url
+  });
+
+  function download(filename) {
+    var eleLink = document.createElement('a');
+    eleLink.download = filename;
+    eleLink.style.display = 'none';
+
+    const domImg = new Image()
+    domImg.src = link
+    domImg.onload = function (params) {
+      var canvas = document.createElement('canvas');
+      var context = canvas.getContext('2d');
+      var width = domImg.naturalWidth;
+      var height = domImg.naturalHeight;
+      canvas.width = width
+      canvas.height = height
+      context.drawImage(domImg, 0, 0, width, height);
+      // 如果是PNG图片，则canvas.toDataURL('image/png')
+      eleLink.href = canvas.toDataURL('image/jpeg');
+      // 触发点击
+      document.body.appendChild(eleLink);
+      eleLink.click();
+      document.body.removeChild(eleLink);
+    }
+    // 然后移除
+  }
+</script>
