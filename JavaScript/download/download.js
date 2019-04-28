@@ -36,6 +36,7 @@ var funDownload = function (content, filename) {
 
     const domImg = new Image()
     domImg.src = url
+    domImg.setAttribute("crossOrigin",'Anonymous')
     domImg.onload = function () {
       // 图片转base64地址
       var canvas = document.createElement('canvas');
