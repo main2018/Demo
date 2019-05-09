@@ -1,7 +1,7 @@
+1.Nuxt中使用
 ``` bash
-Nuxt中使用
 
-require(['~/assets/js/pdf.js'], res => {
+require(['./pdf.js'], res => {
   const renderHTMLtoPDF = res.default
   this.$nextTick(() => {
     renderHTMLtoPDF()
