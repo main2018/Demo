@@ -7,6 +7,7 @@ import history from 'connect-history-api-fallback'
 import { viteCommonjs } from '@originjs/vite-plugin-commonjs'
 import commonjs from 'vite-plugin-commonjs'
 import requireTransform from 'vite-plugin-require-transform'
+import viteVantPlugin from './plugins/vite-vant-plugin.js'
 
 function readPages(srcDir) {
   const pagesDir = resolve(srcDir, 'pages')
@@ -96,21 +97,21 @@ const viteHtmlPlugin = () => {
     },
   }
 }
-const viteVantPlugin = (options) => {
-  return {
-    name: 'vite-plugin-vant',
-    async resolveId(source, importer, options) {
-      console.log(source, 22222);
-      if (source == 'vant/es/button/style') {
-        const resolution = await this.resolve('vant/es/button/style/index', importer, {
-					skipSelf: true,
-					...options
-				})
-        return resolution.id
-      }
-    }
-  }
-}
+// const viteVantPlugin = (options) => {
+//   return {
+//     name: 'vite-plugin-vant',
+//     async resolveId(source, importer, options) {
+//       console.log(source, 22222);
+//       if (source == 'vant/es/button/style') {
+//         const resolution = await this.resolve('vant/es/button/style/index', importer, {
+// 					skipSelf: true,
+// 					...options
+// 				})
+//         return resolution.id
+//       }
+//     }
+//   }
+// }
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -124,6 +125,11 @@ export default defineConfig({
   publicDir: '../../public',
   // 生成静态资源的存放路径（相对于 build.outDir）
   // assetsDir: './abc',
+  resolve: {
+    alias: {
+      '@plugins': resolve(__dirname, './plugins')
+    },
+  },
   plugins: [
     vue(),
     // 解决map下router history模式路由刷新404
