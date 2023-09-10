@@ -1,10 +1,11 @@
 const viteVantPlugin = (options) => {
   return {
     name: 'vite-plugin-vant',
+    enforce: 'pre',
     async resolveId(source, importer, options) {
-      console.log(source, 22222);
-      if (source == 'vant/es/button/style') {
-        const resolution = await this.resolve('vant/es/button/style/index', importer, {
+      if (/^vant\/es\/[a-zA-Z]+\/style$/.test(source)) {
+        // console.log('source', source);
+        const resolution = await this.resolve(`${source}/index`, importer, {
 					skipSelf: true,
 					...options
 				})
