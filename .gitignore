@@ -1,0 +1,33 @@
+# 忽略工程配置文件
+*/.DS_Store
+.DS_Store
+sftp-config.json
+package-lock.json
+node_modules/
+dist/
+offlineDist/
+offlinePackZip/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+test/unit/coverage
+test/e2e/reports
+selenium-debug.log
+
+publish_box.sh
+# 打包压缩缓存文件目录  dll 依赖  --start
+.cache/
+build/vendor-manifest.json
+static/js/vendor.dll.js
+# --end
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+.history/
+dist.zip
+coverage/
