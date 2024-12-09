@@ -1,0 +1,19 @@
+{
+  "name": "@monorepo/home",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@monorepo/home": "file:",
+    "@monorepo/react-ui": "workspace:^",
+    "home": "file:"
+  }
+}

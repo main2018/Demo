@@ -1,0 +1,19 @@
+.primary {
+    background-color: blue;
+    color: #fff;
+}
+
+.success {
+    background-color: green;
+    color: #fff;
+}
+
+.warn {
+    background-color: orange;
+    color: #000;
+}
+
+.danger {
+    background-color: red;
+    color: #fff;
+}
