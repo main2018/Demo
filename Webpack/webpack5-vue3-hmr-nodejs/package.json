@@ -1,0 +1,30 @@
+{
+  "name": "webpack5-vue3-hmr-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "express": "^4.21.2",
+    "html-webpack-plugin": "^5.6.3",
+    "open": "^8.4.2",
+    "style-loader": "^4.0.0",
+    "vue-loader": "^17.4.2",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-middleware": "^7.4.2",
+    "webpack-hot-middleware": "^2.26.1"
+  },
+  "dependencies": {
+    "vue": "^3.5.13"
+  },
+  "engines": {
+    "node": "^18.19.0"
+  }
+}
