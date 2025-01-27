@@ -12,10 +12,14 @@ import App from './App.vue';
 createApp(App).mount('#app');
 console.log(666);
 
+// ❌ 注意：正常情况下，修改入口文件不会触发热更新（浏览器会刷新）
+// ❌ 如想实现入口文件的热更新，需要在入口文件中添加如下代码
+// ❌ 添加以下代码虽然可以实现入口文件的热更新，但是组件状态依然会丢失，比如input的内容丢失
+
 // 如果模块热替换被启用
-// if (module.hot) {
-//   module.hot.accept()
-// }
+if (module.hot) {
+  module.hot.accept()
+}
 
 // // 确保 HMR 正常运行
 // if (module.hot) {
