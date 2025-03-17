@@ -1,0 +1,50 @@
+<!--
+ * @Author: wangpan pan.wang@ushow.media
+ * @Date: 2025-03-14 17:29:06
+ * @LastEditors: wangpan pan.wang@ushow.media
+ * @LastEditTime: 2025-03-14 17:34:13
+ * @FilePath: /code-demo/JavaScript/download/导出csv.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function exportToCSV(data, filename) {
+      const csvContent = "data:text/csv;charset=utf-8," + data.map(row => 
+        row.map(cell => {
+          // 如果单元格是数字且长度超过 10，用双引号包裹
+          // if (typeof cell === 'number' && cell.toString().length > 10) {
+          if (cell.toString().length > 10) {
+            return `="${cell}"`;
+          }
+          return cell;
+        }).join(',')
+      ).join('\n');
+
+      const encodedUri = encodeURI(csvContent);
+      const link = document.createElement("a");
+      link.setAttribute("href", encodedUri);
+      link.setAttribute("download", filename);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    // 示例数据
+    const data = [
+      ["ID", "Name", "Value"],
+      [1, "John", "12345678901234567890"],
+      [2, "Jane", "98765432109876543210"]
+    ];
+
+    // 导出 CSV
+    exportToCSV(data, "data.csv");
+  </script>
+</body>
+</html>

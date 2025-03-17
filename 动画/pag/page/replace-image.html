@@ -1,0 +1,83 @@
+<!--
+ * @Author: wangpan pan.wang@ushow.media
+ * @Date: 2025-03-14 11:25:43
+ * @LastEditors: wangpan pan.wang@ushow.media
+ * @LastEditTime: 2025-03-14 21:36:12
+ * @FilePath: /code-demo/动画/pag/index.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PAG</title>
+    <link rel="icon" href="https://pag.io/img/favicon.png" />
+    <style>
+      body {
+        padding: 12px;
+      }
+      .header {
+        height: 64px;
+        border-bottom: 1px solid rgb(193, 193, 193);
+        margin-bottom: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <span>before:</span>
+      <canvas class="canvas" id="before-pag"></canvas>
+      <span>after:</span>
+      <canvas class="canvas" id="after-pag"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/libpag@latest/lib/libpag.min.js"></script>
+    <script>
+      window.onload = async () => {
+        // const pagUrl = '../assets/a.pag';
+        const pagUrl = '../assets/snowman.pag';
+
+        const PAG = await window.libpag.PAGInit();
+        const buffer = await fetch(pagUrl).then((response) => response.arrayBuffer());
+        // Before
+        const beforePagFile = await PAG.PAGFile.load(buffer);
+        const beforeCanvas = document.getElementById('before-pag');
+        beforeCanvas.width = 360;
+        beforeCanvas.height = 360;
+        const beforePagView = await PAG.PAGView.init(beforePagFile, beforeCanvas);
+        beforePagView.setRepeatCount(0);
+        await beforePagView.play();
+        // After
+        const afterPagFile = await PAG.PAGFile.load(buffer);
+        const image = await loadImage('../assets/logo.png');
+        if (!image) return;
+        // Create PAGImage from ImageElement.
+        const pagImage = PAG.PAGImage.fromSource(image);
+        // Replace Image by editableIndex.
+        // Get editableIndex demo in `editable-index.html`
+        afterPagFile.replaceImage(1, pagImage);
+        const afterCanvas = document.getElementById('after-pag');
+        afterCanvas.width = 360;
+        afterCanvas.height = 360;
+        const afterPagView = await PAG.PAGView.init(afterPagFile, afterCanvas);
+        afterPagView.setRepeatCount(0);
+        await afterPagView.play();
+      };
+
+      const loadImage = (src) => {
+        return new Promise((resolve) => {
+          const image = new Image();
+          image.onload = () => {
+            resolve(image);
+          };
+          image.onerror = () => {
+            resolve(false);
+          };
+          image.crossOrigin = 'anonymous';
+          image.src = src;
+        });
+      };
+    </script>
+  </body>
+</html>
