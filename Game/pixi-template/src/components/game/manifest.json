@@ -1,0 +1,17 @@
+{
+  "bundles": [
+    {
+      "name": "base",
+      "assets": [
+        {
+          "alias": "bg",
+          "src": "bg.png"
+        },
+        {
+          "alias": "num_get",
+          "src": "num_get.png"
+        }
+      ]
+    }
+  ]
+}

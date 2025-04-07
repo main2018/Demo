@@ -1,0 +1,24 @@
+{
+  "name": "pixi-template",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@esotericsoftware/spine-pixi-v8": "^4.2.76",
+    "lodash-es": "^4.17.21",
+    "mitt": "^3.0.1",
+    "pixi.js": "^8.9.1",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "postcss-pxtorem": "^6.1.0",
+    "sass-embedded": "^1.86.1",
+    "vite": "^6.2.0"
+  }
+}

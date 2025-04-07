@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "filename": {
+      "description": "pack filename",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "instanceof": "Function"
+        }
+      ]
+    },
+    "publicPath": {
+      "description": "webpack publicPath config",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "instanceof": "Function"
+        }
+      ]
+    }
+  
+  },
+  "required": ["filename", "publicPath"],
+  "additionalProperties": false
+}

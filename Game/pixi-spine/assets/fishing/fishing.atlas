@@ -1,0 +1,398 @@
+
+fishing.png
+size: 1766,1766
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bf_r
+  rotate: true
+  xy: 949, 203
+  size: 71, 162
+  orig: 71, 162
+  offset: 0, 0
+  index: -1
+bigfing
+  rotate: true
+  xy: 1636, 1284
+  size: 144, 129
+  orig: 144, 129
+  offset: 0, 0
+  index: -1
+c1
+  rotate: false
+  xy: 1604, 1077
+  size: 28, 23
+  orig: 28, 23
+  offset: 0, 0
+  index: -1
+c2
+  rotate: true
+  xy: 1132, 503
+  size: 32, 26
+  orig: 32, 26
+  offset: 0, 0
+  index: -1
+c3
+  rotate: true
+  xy: 1132, 724
+  size: 42, 33
+  orig: 42, 33
+  offset: 0, 0
+  index: -1
+c4
+  rotate: false
+  xy: 579, 832
+  size: 45, 34
+  orig: 45, 34
+  offset: 0, 0
+  index: -1
+coil
+  rotate: false
+  xy: 1678, 1663
+  size: 79, 103
+  orig: 79, 103
+  offset: 0, 0
+  index: -1
+coil_hole
+  rotate: false
+  xy: 702, 988
+  size: 9, 20
+  orig: 9, 20
+  offset: 0, 0
+  index: -1
+d1
+  rotate: true
+  xy: 579, 870
+  size: 59, 39
+  orig: 59, 39
+  offset: 0, 0
+  index: -1
+fing1
+  rotate: true
+  xy: 1683, 547
+  size: 81, 69
+  orig: 81, 69
+  offset: 0, 0
+  index: -1
+fing2
+  rotate: true
+  xy: 1678, 1575
+  size: 84, 74
+  orig: 86, 77
+  offset: 0, 3
+  index: -1
+fing3
+  rotate: true
+  xy: 1514, 68
+  size: 72, 69
+  orig: 76, 72
+  offset: 2, 3
+  index: -1
+fing4
+  rotate: false
+  xy: 880, 294
+  size: 66, 70
+  orig: 66, 70
+  offset: 0, 0
+  index: -1
+fish
+  rotate: false
+  xy: 1519, 1432
+  size: 235, 119
+  orig: 235, 119
+  offset: 0, 0
+  index: -1
+fish1
+  rotate: true
+  xy: 1519, 1555
+  size: 211, 155
+  orig: 211, 155
+  offset: 0, 0
+  index: -1
+fish10
+  rotate: true
+  xy: 950, 278
+  size: 551, 178
+  orig: 551, 178
+  offset: 0, 0
+  index: -1
+fish11
+  rotate: true
+  xy: 1169, 486
+  size: 565, 236
+  orig: 565, 236
+  offset: 0, 0
+  index: -1
+fish12
+  rotate: false
+  xy: 732, 1055
+  size: 756, 302
+  orig: 756, 302
+  offset: 0, 0
+  index: -1
+fish2
+  rotate: true
+  xy: 1492, 1104
+  size: 253, 140
+  orig: 253, 140
+  offset: 0, 0
+  index: -1
+fish3
+  rotate: true
+  xy: 751, 37
+  size: 327, 125
+  orig: 327, 125
+  offset: 0, 0
+  index: -1
+fish4
+  rotate: false
+  xy: 1132, 161
+  size: 406, 164
+  orig: 406, 164
+  offset: 0, 0
+  index: -1
+fish5
+  rotate: true
+  xy: 1409, 620
+  size: 431, 163
+  orig: 431, 163
+  offset: 0, 0
+  index: -1
+fish6
+  rotate: true
+  xy: 1576, 632
+  size: 438, 156
+  orig: 438, 156
+  offset: 0, 0
+  index: -1
+fish7
+  rotate: true
+  xy: 751, 368
+  size: 461, 195
+  orig: 461, 195
+  offset: 0, 0
+  index: -1
+fish8
+  rotate: false
+  xy: 728, 833
+  size: 437, 218
+  orig: 437, 218
+  offset: 0, 0
+  index: -1
+fish9
+  rotate: false
+  xy: 1132, 329
+  size: 479, 153
+  orig: 479, 153
+  offset: 0, 0
+  index: -1
+fishing_rod
+  rotate: true
+  xy: 732, 1361
+  size: 405, 783
+  orig: 411, 811
+  offset: 0, 0
+  index: -1
+hand1
+  rotate: true
+  xy: 18, 1198
+  size: 568, 710
+  orig: 602, 734
+  offset: 0, 0
+  index: -1
+hand_r
+  rotate: true
+  xy: 0, 95
+  size: 725, 747
+  orig: 776, 783
+  offset: 27, 0
+  index: -1
+hook
+  rotate: true
+  xy: 1519, 1363
+  size: 65, 94
+  orig: 65, 94
+  offset: 0, 0
+  index: -1
+hook2
+  rotate: true
+  xy: 474, 23
+  size: 68, 107
+  orig: 68, 107
+  offset: 0, 0
+  index: -1
+hook3
+  rotate: true
+  xy: 585, 33
+  size: 58, 119
+  orig: 58, 119
+  offset: 0, 0
+  index: -1
+hook4
+  rotate: true
+  xy: 195, 0
+  size: 91, 126
+  orig: 91, 126
+  offset: 0, 0
+  index: -1
+hook5
+  rotate: true
+  xy: 382, 838
+  size: 91, 193
+  orig: 91, 193
+  offset: 0, 0
+  index: -1
+rope
+  rotate: false
+  xy: 0, 824
+  size: 14, 942
+  orig: 14, 942
+  offset: 0, 0
+  index: -1
+rope2
+  rotate: true
+  xy: 18, 933
+  size: 261, 616
+  orig: 265, 621
+  offset: 2, 2
+  index: -1
+shad_on_fing
+  rotate: true
+  xy: 1132, 770
+  size: 59, 33
+  orig: 59, 51
+  offset: 0, 0
+  index: -1
+shadow_stic
+  rotate: false
+  xy: 880, 192
+  size: 65, 98
+  orig: 65, 98
+  offset: 0, 0
+  index: -1
+splashes/spl1_1
+  rotate: false
+  xy: 1492, 1074
+  size: 108, 26
+  orig: 250, 250
+  offset: 76, 27
+  index: -1
+splashes/spl1_10
+  rotate: false
+  xy: 1093, 41
+  size: 218, 116
+  orig: 250, 250
+  offset: 12, 27
+  index: -1
+splashes/spl1_11
+  rotate: false
+  xy: 1315, 47
+  size: 195, 110
+  orig: 250, 250
+  offset: 29, 27
+  index: -1
+splashes/spl1_12
+  rotate: false
+  xy: 18, 830
+  size: 192, 99
+  orig: 250, 250
+  offset: 34, 27
+  index: -1
+splashes/spl1_13
+  rotate: false
+  xy: 0, 0
+  size: 191, 91
+  orig: 250, 250
+  offset: 35, 27
+  index: -1
+splashes/spl1_14
+  rotate: true
+  xy: 638, 1012
+  size: 182, 86
+  orig: 250, 250
+  offset: 44, 28
+  index: -1
+splashes/spl1_15
+  rotate: true
+  xy: 638, 824
+  size: 184, 60
+  orig: 250, 250
+  offset: 45, 29
+  index: -1
+splashes/spl1_16
+  rotate: true
+  xy: 1542, 144
+  size: 181, 52
+  orig: 250, 250
+  offset: 45, 31
+  index: -1
+splashes/spl1_17
+  rotate: true
+  xy: 1132, 539
+  size: 181, 32
+  orig: 250, 250
+  offset: 48, 40
+  index: -1
+splashes/spl1_2
+  rotate: true
+  xy: 1628, 501
+  size: 127, 51
+  orig: 250, 250
+  offset: 67, 27
+  index: -1
+splashes/spl1_3
+  rotate: false
+  xy: 325, 22
+  size: 145, 69
+  orig: 250, 250
+  offset: 57, 27
+  index: -1
+splashes/spl1_4
+  rotate: false
+  xy: 214, 832
+  size: 164, 97
+  orig: 250, 250
+  offset: 49, 27
+  index: -1
+splashes/spl1_5
+  rotate: true
+  xy: 1636, 1088
+  size: 192, 128
+  orig: 250, 250
+  offset: 28, 27
+  index: -1
+splashes/spl1_6
+  rotate: true
+  xy: 1615, 278
+  size: 204, 135
+  orig: 250, 250
+  offset: 19, 27
+  index: -1
+splashes/spl1_7
+  rotate: false
+  xy: 880, 56
+  size: 209, 132
+  orig: 250, 250
+  offset: 15, 27
+  index: -1
+splashes/spl1_8
+  rotate: false
+  xy: 1409, 486
+  size: 215, 130
+  orig: 250, 250
+  offset: 12, 27
+  index: -1
+splashes/spl1_9
+  rotate: true
+  xy: 1598, 55
+  size: 219, 125
+  orig: 250, 250
+  offset: 11, 27
+  index: -1
+whater_circles
+  rotate: false
+  xy: 1683, 486
+  size: 57, 57
+  orig: 57, 63
+  offset: 0, 4
+  index: -1
